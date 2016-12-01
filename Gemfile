@@ -8,8 +8,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'formtastic'
 
-gem 'service_discovery', git: 'git@gitlab.com:microservices-from-day-one/service_discovery.git'
-gem 'api_client', git: 'git@gitlab.com:microservices-from-day-one/api-client.git'
+gem 'service_discovery', git: 'git@github.com:microservices-from-day-one/service_discovery.git'
+gem 'api_client', git: 'git@github.com:microservices-from-day-one/api-client.git'
 
 group :development, :test do
   gem 'byebug'
