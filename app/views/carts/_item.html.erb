@@ -1,0 +1,41 @@
+<% book = find_product(item.item_id) %>
+
+<script>$(document).ready(function(c) {
+  $("[data-pid='<%= book.id %>'] .close1").on('click', function(c){
+    $("[data-pid='<%= book.id %>']").fadeOut('slow', function(c){
+      $("[data-pid='<%= book.id %>'] #remove_product_from_cart_form").submit();
+      $("[data-pid='<%= book.id %>']").remove();
+    });
+  });
+});
+</script>
+
+<div class="cart-header" data-pid="<%= book.id %>">
+  <div class="close1"> </div>
+
+  <%= form_tag(remove_item_cart_path, id: 'remove_product_from_cart_form', method: :delete) do -%>
+    <%= hidden_field_tag 'book_id', item.item_id %>
+  <% end %>
+
+  <div class="cart-sec">
+    <div class="cart-item cyc">
+      <%= image_tag book.cover_image, class: "img-responsive" %>
+    </div>
+    <div class="cart-item-info">
+      <h3>
+        <a href="<%= book_path(book.slug) %>"><%= book.title %></a>
+        <span>ISBN: <%= book.isbn %></span>
+      </h3>
+      <ul class="qty">
+        <li><p><%= t(:"cart.price") %>: <%= render_price(item.price) %></p></li>
+        <li><p><%= t(:"cart.quantity_abbr") %>: <%= item.quantity %></p></li>
+      </ul>
+      <div class="delivery">
+        <span>Delivered in 2-3 bussiness days</span>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+
+  </div>
+</div>

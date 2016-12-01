@@ -1,0 +1,18 @@
+<div class="col-md-3 cart-total">
+  <a class="continue" href="product.html"><%= t("cart.continue_shopping") %></a>
+  <div class="price-details">
+    <h3><%= t(:"cart.price_details") %></h3>
+    <span><%= t(:"cart.total") %></span>
+    <span class="total1"><%= render_price(shopping_cart.total) %></span>
+    <span><%= t(:"cart.delivery_charges") %></span>
+    <span class="total1">[TBD]</span>
+    <div class="clearfix"></div>
+  </div>
+  <ul class="total_price">
+     <li class="last_price"> <h4><%= t(:"cart.total") %></h4></li>
+     <li class="last_price"><span><%= render_price(shopping_cart.total) %></span></li>
+  </ul>
+  <div class="clearfix"></div>
+  <div class="clearfix"></div>
+  <a class="order" href="#"><%= t(:"cart.place_order") %></a>
+</div>

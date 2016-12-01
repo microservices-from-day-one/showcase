@@ -1,0 +1,3 @@
+== Showcase
+
+This is the front-end application end-users will use for their shopping experience.

@@ -1,0 +1,54 @@
+<div class="product">
+  <div class="container">
+    <div class="product-price1">
+      <div class="top-sing">
+        <div class="col-md-7 single-top">
+          <div class="flexslider">
+            <ul class="slides">
+              <li data-thumb="<%= image_path book_details.cover_image %>">
+                <div class="thumb-image"> <img src="<%= book_details.cover_image %>" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+              </li>
+            </ul>
+          </div>
+          <script>
+          // Can also be used with $(document).ready()
+          $(window).load(function() {
+            $('.flexslider').flexslider({
+              animation: "slide",
+              controlNav: "thumbnails"
+            });
+          });
+          </script>
+
+        </div>
+        <div class="col-md-5 single-top-in">
+          <div class="single-para ">
+            <h4><%= book_details.title %></h4>
+            <h5 class="item_price"><%= render_price(book_details.price) %></h5>
+            <p class="para"><%= book_details.description %></p>
+            <div class="prdt-info-grid">
+              <ul>
+                <li>- ISBN : <%= book_details.isbn %></li>
+                <li>- Author : <%= book_details.author %></li>
+                <li>- Pages : <%= book_details.pages %></li>
+              </ul>
+            </div>
+            <%= render 'reviews' %>
+            <%= form_tag(add_item_cart_path, id: 'add_product_to_cart_form') do -%>
+              <%= hidden_field_tag 'book_id', book_details.id %>
+            <% end %>
+            <%= link_to "ADD TO CART", "#", class: "add-cart item_add" %>
+            <script>
+            $("a.item_add").click(function(event) {
+              event.preventDefault();
+              $("#add_product_to_cart_form").submit();
+            });
+            </script>
+          </div>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+    <%= render "related", books: book_details.related %>
+  </div>
+</div>

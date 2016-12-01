@@ -1,0 +1,10 @@
+<div class="container">
+	<div class="check-sec">
+		<%= render partial: 'carts/summary' %>
+		<div class="col-md-9 cart-items">
+			<h1><%= t(:"cart.mine") %> (<%= shopping_cart.items_count %>)</h1>
+			<%= render partial: 'carts/item', collection: shopping_cart.items %>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+</div>

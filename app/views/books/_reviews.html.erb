@@ -1,0 +1,13 @@
+<h4>Reviews</h4>
+<% if book_reviews(book_details.id).any? %>
+  <ul>
+    <% for review in book_reviews(book_details.id) %>
+      <li>
+        <%= review.subject %> (<%= review.rating %> stars)
+        <blockquote><%= review.body %></blockquote>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No reviews for this book yet.</p>
+<% end %>

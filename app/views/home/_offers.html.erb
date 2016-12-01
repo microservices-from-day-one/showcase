@@ -1,0 +1,36 @@
+<div class="offers">
+	 <div class="container">
+	 <h3>Featured Categories</h3>
+	 <div class="offer-grids">
+		 <% cat1 = featured_categories.first %>
+		 <div class="col-md-6 grid-left">
+			 <a href="<%= category_path(cat1.slug) %>"><div class="offer-grid1">
+				 <div class="ofr-pic">
+					 <img src="<%= cat1.image %>" class="img-responsive" alt=""/>
+				 </div>
+				 <div class="ofr-pic-info">
+					 <h4><%= cat1.name %></h4>
+					 <span><%= cat1.description %></span>
+					 <p>Shop Now</p>
+				 </div>
+				 <div class="clearfix"></div>
+			 </div></a>
+		 </div>
+		 <% cat2 = featured_categories.last %>
+		 <div class="col-md-6 grid-right">
+			 <a href="<%= category_path(cat2.slug) %>"><div class="offer-grid2">
+				 <div class="ofr-pic-info2">
+					 <h4><%= cat2.name %></h4>
+					 <h5><%= cat2.description %></h5>
+					 <p>Shop Now</p>
+				 </div>
+				 <div class="ofr-pic2">
+					 <img src="<%= cat2.image %>" class="img-responsive" alt=""/>
+				 </div>
+				 <div class="clearfix"></div>
+			 </div></a>
+		 </div>
+		 <div class="clearfix"></div>
+	 </div>
+	 </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="bottom-prdt">
+  <div class="btm-grid-sec">
+    <% for book in books do %>
+      <div class="col-md-2 btm-grid">
+        <a href="<%= book_path(book.slug) %>">
+          <%= image_tag book.cover_image, alt: book.title, style: "width: 120px" %>
+          <h4><%= book.title %></h4>
+          <span><%= render_price(book.price) %></span>
+        </a>
+      </div>
+    <% end %>
+    <div class="clearfix"></div>
+  </div>
+</div>

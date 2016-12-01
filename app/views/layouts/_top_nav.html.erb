@@ -1,0 +1,37 @@
+<div class="top-nav">
+  <ul class="memenu skyblue"><li class="active"><%= link_to "Home", root_path %></li>
+    <li class="grid"><a href="#">Books</a>
+      <div class="mepanel">
+        <div class="row">
+          <div class="col1 me-one">
+            <h4>Categories</h4>
+            <ul>
+              <% for category in categories do %>
+                <li><%= link_to category.name, category_path(category.slug) %></li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="col1 me-one">
+            <h4>Publisher</h4>
+            <ul>
+              <li><a href="product.html">Diwali Lights</a></li>
+              <li><a href="product.html">Tube Lights</a></li>
+              <li><a href="product.html">Bulbs</a></li>
+            </ul>
+          </div>
+          <div class="col1 me-one">
+            <h4>Price</h4>
+            <ul>
+              <li><a href="product.html">Under $5</a></li>
+              <li><a href="product.html">$5 - $10</a></li>
+              <li><a href="product.html">$10 - $20</a></li>
+              <li><a href="product.html">$20 - $30</a></li>
+              <li><a href="product.html">$30+</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="grid"><%= link_to "Contact",  contact_path %></li>
+  </ul>
+</div>

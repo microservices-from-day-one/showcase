@@ -1,0 +1,17 @@
+en:
+  cart:
+    continue_shopping: Continue Shopping
+    delivery_charges: Delivery Charges
+    mine: My Shopping Bag
+    place_order: Place Order
+    price: Price
+    price_details: Price Details
+    quantity_abbr: Qty
+    total: Total
+  categories:
+    title: Categories
+  products:
+    our: Our Products
+    title: Products
+  ui:
+    view: View

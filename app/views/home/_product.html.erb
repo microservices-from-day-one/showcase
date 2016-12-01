@@ -1,0 +1,17 @@
+<% if product %>
+  <div class="col-md-3 feature-grid">
+    <a href="<%= book_path(product.slug) %>"><%= image_tag(product.cover_image) %>
+      <div class="arrival-info">
+        <h4><%= product.title %></h4>
+        <p><%= render_price product.price %> </p>
+        <% if product["full_price"] %>
+          <span class="pric1"><del><%= render_price product["full_price"] %></del></span>
+          <span class="disc">[<%= percentage_off(product["price"], product["full_price"]) %>% Off]</span>
+        <% end %>
+      </div>
+      <div class="viw">
+       <a href="<%= book_path(product.slug) %>"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><%= t :"ui.view" %></a>
+      </div>
+     </a>
+  </div>
+<% end %>

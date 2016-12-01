@@ -1,0 +1,5 @@
+<%= render partial: 'home/slider' %>
+<%= render partial: 'home/items' %>
+<% cache 'featured_categories', expires_in: 4.hours do %>
+  <%= render partial: 'home/offers' %>
+<% end %>
